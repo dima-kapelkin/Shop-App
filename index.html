@@ -10,88 +10,7 @@
 <div class="container">
 
     <!-- Каталог -->
-    <main class="catalog">
-
-        <div class="product-card">
-            <img src="img/apple-watch.png" alt="">
-            <h3>Apple Watch</h3>
-            <p class="subtitle">Series 5 SE</p>
-            <div class="price-row">
-                <span>$529.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-        
-        <div class="product-card">
-            <img src="img/Sony ZX330BT.png" alt="">
-            <h3>Sony ZX330BT</h3>
-            <p class="subtitle">Light Grey</p>
-            <div class="price-row">
-                <span>$39.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="img/iphone11-black.png" alt="">
-            <h3>Iphone 11</h3>
-            <p class="subtitle">Serious Black</p>
-            <div class="price-row">
-                <span>$619.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="img/iphone11-green.png" alt="">
-            <h3>Iphone 11</h3>
-            <p class="subtitle">Subway Blue</p>
-            <div class="price-row">
-                <span>$619.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="img/iphone13-pro.png" alt="">
-            <h3>Iphone 13 Pro</h3>
-            <p class="subtitle">Silly Silver</p>
-            <div class="price-row">
-                <span>$1029.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-        
-        <div class="product-card">
-            <img src="img/iphone13-black.png" alt="">
-            <h3>Iphone 13 Pro</h3>
-            <p class="subtitle">Grey</p>
-            <div class="price-row">
-                <span>$1099.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="img/samsung-note21.png" alt="">
-            <h3>Samsung Galaxy Note 21 </h3>
-            <p class="subtitle">2 - Options</p>
-            <div class="price-row">
-                <span>$999.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="img/samsung-s21.png" alt="">
-            <h3>Samsung Galaxy S21+</h3>
-            <p class="subtitle">Lilac Purple</p>
-            <div class="price-row">
-                <span>$849.99</span>
-                <button class="cart-btn">🛒</button>
-            </div>
-        </div>
-        <!-- Дублируешь карточки по аналогии -->
+    <main class="catalog" id="catalog">
 
     </main>
 
@@ -115,18 +34,16 @@
         <img id="modalImg" src="" alt="">
         <h2 id="modalTitle"></h2>
         <p id="modalSubtitle" class="subtitle"></p>
-        <p class="modal-description">
-            Подробное описание товара. Здесь будут характеристики,
-            гарантия и дополнительная информация.
-        </p>
+        <p class="modal-description" id="modalDescription"></p>
         <div class="price-row">
             <span id="modalPrice"></span>
-            <button class="cart-btn">Добавить в корзину</button>
+            <button class="cart-btn" id="modalAddToCart">Добавить в корзину</button>
         </div>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
+
 
 </body>
 </html>
