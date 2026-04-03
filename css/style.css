@@ -12,8 +12,7 @@ html, body {
 body {
     background: #f3f3f3;
     display: flex;
-    justify-content: center;   /* по горизонтали */
-    align-items: center;  
+    flex-direction: column;
 }
 
 /* ===== Основной контейнер ===== */
@@ -21,10 +20,10 @@ body {
 .container {
     max-width: 1400px;
     width: 100%;
-    margin: 40px auto;   /* аккуратные внешние отступы */
+    margin: auto;              /* 🔥 ключевой момент */
+    padding: 40px 0;           /* одинаковые отступы сверху и снизу */
     display: flex;
     gap: 40px;
-    align-items:stretch;
 }
 
 /* ===== Каталог ===== */
@@ -211,3 +210,19 @@ body {
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+.go-to-cart-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #1f2a1f;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.go-to-cart-btn:hover {
+    opacity: 0.9;
+}
+

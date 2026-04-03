@@ -33,7 +33,7 @@ const modalAddToCart = document.getElementById('modalAddToCart');
 
 
 // ===== STATE =====
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 let currentProduct = null;
 
@@ -109,10 +109,11 @@ function addToCart(product) {
             id: product.id,
             title: product.title,
             price: product.price,
+            image: product.image,
             quantity: 1
         });
     }
-
+    localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
 }
 
@@ -148,7 +149,10 @@ function renderCart() {
     });
 
     cartTotal.innerText = `Итого: $${total.toFixed(2)}`;
+
+    
 }
+
 
 
 // ===== Закрытие модалки =====
@@ -167,3 +171,5 @@ document.addEventListener('keydown', (e) => {
         modal.classList.remove('active');
     }
 });
+
+renderCart();
