@@ -98,14 +98,26 @@ closeOrderModal.addEventListener('click', () => {
 
 submitOrder.addEventListener('click', async () => {
 
+    if (cart.length === 0) {
+        alert("Корзина пустая");
+        return;
+    }
+
     const order = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        address: document.getElementById('address').value,
-        phone: document.getElementById('phone').value,
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName: document.getElementById('lastName').value.trim(),
+        address: document.getElementById('address').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
         items: cart,
-        createdAt: new Date()
+        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+        createdAt: new Date().toISOString()
     };
+
+    // 🔴 Валидация
+    if (!order.firstName || !order.lastName || !order.address || !order.phone) {
+        alert("Заполни все поля");
+        return;
+    }
 
     try {
         await addDoc(collection(db, "orders"), order);
@@ -120,8 +132,17 @@ submitOrder.addEventListener('click', async () => {
 
     } catch (error) {
         console.error("Ошибка:", error);
+        alert("Ошибка при оформлении заказа");
     }
 
+});
+
+checkoutBtn.addEventListener('click', () => {
+    orderModal.classList.add('active');
+});
+
+closeOrderModal.addEventListener('click', () => {
+    orderModal.classList.remove('active');
 });
 
 localStorage.removeItem('cart')
