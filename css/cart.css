@@ -129,3 +129,18 @@ h1 {
     color: white;
     border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+
+    .cart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-card {
+        padding: 15px;
+    }
+
+    .cart-controls {
+        gap: 5px;
+    }
+}

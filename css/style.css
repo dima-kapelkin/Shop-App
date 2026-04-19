@@ -226,3 +226,55 @@ body {
     opacity: 0.9;
 }
 
+/* ===== 📱 АДАПТИВ ===== */
+
+@media (max-width: 1024px) {
+
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column; /* 🔥 ВАЖНО */
+    }
+
+    .catalog {
+        grid-template-columns: 1fr; /* 🔥 1 колонка */
+    }
+
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #ddd;
+        padding: 20px 0 0;
+    }
+
+    .go-to-cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal img {
+        height: 180px;
+    }
+}
